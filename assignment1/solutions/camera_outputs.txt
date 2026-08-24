@@ -1,0 +1,3 @@
+Camera FPS: 30.0
+Camera Height: 480.0
+Camera Width: 640.0
