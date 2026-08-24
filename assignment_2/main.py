@@ -27,13 +27,6 @@ def copy(image, emptyPictureArray):
             emptyPictureArray[y, x] = image[y, x]
     cv2.imwrite("solutions/copy.png", emptyPictureArray)
 
-"""
-
-def copy(image, emptyPictureArray):
-    roi = image[0:image.shape[0], 0:image.shape[1]]
-    emptyPictureArray[0:image.shape[0], 0:image.shape[1]] = roi
-    cv2.imwrite("solutions/copied.png", emptyPictureArray)
-"""
 def greyscale(image):
     greyscaled_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     cv2.imwrite("solutions/greyscale.png", greyscaled_image)
@@ -60,11 +53,11 @@ def rotation(image, rotation_angle):
         rotated_image = cv2.rotate(image, cv2.ROTATE_180)
     else:
         print("Invalid rotation angle")
-    cv2.imwrite("solutions/rotated.png", rotated_image)
+    cv2.imwrite("solutions/rotated.png", cv2.rotate(image, cv2.ROTATE_180))
 
 
 padding(image, 100)
-crop(image, 400, 250, 500, 350)
+crop(image, 200, 200, 670, 470)
 resize(image, 200, 200)
 copy(image, emptyPictureArray)
 greyscale(image)
